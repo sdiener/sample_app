@@ -26,6 +26,12 @@ describe User do
 	it {should be_valid}
 
     it {should respond_to(:authenticate)}
+    it {should respond_to(:remember_token)}
+
+    describe "remember token" do 
+        before {@user.save}
+        its(:remember_token) {should_not be_blank}
+    end
 
     describe "return value of authenticate method" do
         before {@user.save}
