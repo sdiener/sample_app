@@ -42,6 +42,17 @@ describe "Micropost pages" do
 			end
 		end
 	end
+
+
+	describe "pagination" do
+		it "should paginate the feed" do
+
+
+			50.times {FactoryGirl.create(:micropost, user: user) }
+			visit root_path
+			page.should have_selector('div.pagination')
+		end
+	end
 	
 end
 

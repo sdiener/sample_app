@@ -1,5 +1,8 @@
+<script src="assets/character_countdown.js"></script>
+
 <%= form_for(@micropost) do |f| %>
 <%= render 'shared/error_messages', object: f.object %>
+<div class="samscountdown">a</div>
 <div class="field">
 	<%= f.text_area :content, placeholder: "Compose new micropost..." %>
 </div>
